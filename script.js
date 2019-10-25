@@ -26,20 +26,17 @@ let app = new Vue({
           
         });
     },
-      selectCard(card) {
-        this.cards.forEach(function(thisCard) {
-          if (card === thisCard) {
-          if (thisCard.selected) {
-            thisCard.selected = false;
-            thisCard.class = "";
-          }
-          else {
-            thisCard.selected = true;
-            thisCard.class = "selected";
-          }
+    replaceSelected() {
+      this.loaded = false;
+      for (let i = 0; i < this.cards.length; i++) {
+        if (this.cards[i].selected) {
+          axios.get("https://deckofcardsapi.com/api/deck/" + this.deck_id + "/draw/?count=1")
+            .then(response => {
+              this.cards[i] = response.data.cards[0];
+            });
         }
-        })
       }
+    },
   },
   computed: {
     

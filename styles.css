@@ -4,11 +4,16 @@ body {
     padding: 20px 100px 0px 100px;
     background: #f3f3f3;
     margin-bottom: 50px;
+    text-align: center;
 }
 
 button {
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
+}
+
+td button {
+    margin-top: 10px;
 }
 
 textarea {
