@@ -18,7 +18,8 @@
       <table>
         <tr>
           <td v-for="card in cards">
-            <img v-bind:src = "card.image">
+            <img v-bind:class = "card.class" v-bind:src = "card.image" v-on:click="selectCard(card)">
+            <button v-on:click="selectCard(card)">{{card.selected}}</button>
           </td>
         </tr>
       </table>
