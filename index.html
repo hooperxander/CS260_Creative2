@@ -9,18 +9,17 @@
 </head>
 
 <body>
-  <h1>Cards</h1>
+  <h1>Hand Generator</h1>
   <div id="app">
     
       <p>
-        <button v-on:click="generateHand">Get Random Hand</button>
-        <button v-on:click="replaceSelected">Replace Selected Cards</button>
+        <button v-on:click="generateHand">Get Random Hand of This Many Cards -></button>
+        <input v-model="numCards" type="number" name="How Many Cards:" value="5">
       </p>
       <table>
         <tr>
           <td v-for="card in cards">
-            <img v-bind:class = "card.class" v-bind:src = "card.image" v-on:click="selectCard(card)">
-            <button v-on:click="selectCard(card)">{{card.selected}}</button>
+            <img v-bind:class = "card.class" v-bind:src = "card.image">
           </td>
         </tr>
       </table>
